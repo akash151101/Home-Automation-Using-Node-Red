@@ -1,4 +1,4 @@
-Home-Automation-Project
+Home Automation Project Using Alexa Node
 =======================
 
 ### About
