@@ -1,1 +1,472 @@
-[]
+[
+    {
+        "id": "2b4258b8691c785b",
+        "type": "tab",
+        "label": "Home Automation using Alexa",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "7282f5910d760e30",
+        "type": "alexa-home-conf",
+        "username": "Akash"
+    },
+    {
+        "id": "ac007422598d1112",
+        "type": "mqtt-broker",
+        "name": "Lights/Switch",
+        "broker": "broker.mqttdashboard.com",
+        "port": "1883",
+        "clientid": "light1262",
+        "usetls": false,
+        "protocolVersion": "3",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "bf7ad0b571df25ef",
+        "type": "ui_group",
+        "name": "Earthquake IOT Lab",
+        "tab": "a62537da88d38e5e",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "2becf48846abd7b4",
+        "type": "ui_group",
+        "name": "Temp Guage UI IOT",
+        "tab": "ee2207a5f3609f72",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "0f05590416f76e9d",
+        "type": "ui_group",
+        "name": "Audio Message UI IOT",
+        "tab": "80a375f133ca3dbb",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "a62537da88d38e5e",
+        "type": "ui_tab",
+        "name": "Earthquake UI ",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ee2207a5f3609f72",
+        "type": "ui_tab",
+        "name": "Temperature Guage UI",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "80a375f133ca3dbb",
+        "type": "ui_tab",
+        "name": "Audio Message UI",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "267c225980f9e33c",
+        "type": "alexa-home",
+        "z": "2b4258b8691c785b",
+        "conf": "7282f5910d760e30",
+        "device": "153091",
+        "acknoledge": true,
+        "name": "Ceiling Light",
+        "topic": "",
+        "x": 350,
+        "y": 200,
+        "wires": [
+            [
+                "0358fce34fb812cf",
+                "c462333d07c53667"
+            ]
+        ]
+    },
+    {
+        "id": "0358fce34fb812cf",
+        "type": "change",
+        "z": "2b4258b8691c785b",
+        "name": "OFF",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "ESP05:false",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 590,
+        "y": 100,
+        "wires": [
+            [
+                "5afbc0c398820c75",
+                "d881d577aa0621ba"
+            ]
+        ]
+    },
+    {
+        "id": "c462333d07c53667",
+        "type": "change",
+        "z": "2b4258b8691c785b",
+        "name": "ON",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "ESP05:true",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 590,
+        "y": 280,
+        "wires": [
+            [
+                "5afbc0c398820c75",
+                "48ae7982fcb657d4"
+            ]
+        ]
+    },
+    {
+        "id": "5afbc0c398820c75",
+        "type": "mqtt out",
+        "z": "2b4258b8691c785b",
+        "name": "lights",
+        "topic": "light1262",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "ac007422598d1112",
+        "x": 850,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "48ae7982fcb657d4",
+        "type": "debug",
+        "z": "2b4258b8691c785b",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1130,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "14d9017e2f13ec4c",
+        "type": "ui_button",
+        "z": "2b4258b8691c785b",
+        "name": "Switch Button",
+        "group": "bf7ad0b571df25ef",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Switch Off",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "Switch Off",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 260,
+        "y": 440,
+        "wires": [
+            [
+                "01582a96833b337c"
+            ]
+        ]
+    },
+    {
+        "id": "01582a96833b337c",
+        "type": "template",
+        "z": "2b4258b8691c785b",
+        "name": "Template Node",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Do you want to {{payload}} the Fan?",
+        "output": "str",
+        "x": 500,
+        "y": 360,
+        "wires": [
+            [
+                "95de611fcbc992f5"
+            ]
+        ]
+    },
+    {
+        "id": "95de611fcbc992f5",
+        "type": "ui_toast",
+        "z": "2b4258b8691c785b",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "Off",
+        "cancel": "Cancel",
+        "raw": false,
+        "topic": "Switching Off the Fan",
+        "name": "Dialog Node",
+        "x": 740,
+        "y": 440,
+        "wires": [
+            [
+                "e085c6372c86e2f9"
+            ]
+        ]
+    },
+    {
+        "id": "e085c6372c86e2f9",
+        "type": "switch",
+        "z": "2b4258b8691c785b",
+        "name": "Switch Node",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Off",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Cancel",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 960,
+        "y": 540,
+        "wires": [
+            [
+                "47572ae7c2569997"
+            ],
+            [
+                "ff2fb9e3995418d7"
+            ]
+        ]
+    },
+    {
+        "id": "47572ae7c2569997",
+        "type": "debug",
+        "z": "2b4258b8691c785b",
+        "name": "Message 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1150,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "ff2fb9e3995418d7",
+        "type": "debug",
+        "z": "2b4258b8691c785b",
+        "name": "Message 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1150,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "69a0d8b8f9e114d8",
+        "type": "debug",
+        "z": "2b4258b8691c785b",
+        "name": "Temperature Display",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "e305b0d30490fb15",
+        "type": "function",
+        "z": "2b4258b8691c785b",
+        "name": "Temperature Setting Function",
+        "func": "var query = msg.command;\nvar val = msg.payload;\nif(query === \"IncrementTargetTemperatureRequest\"){\n    const rand = Math.floor(Math.random() * 150) + 1;\n    msg.payload = rand + val;\n}\nelse if(query === \"DecrementTargetTemperatureRequest\"){\n    const rand = Math.floor(Math.random() * 150) + 1;\n    msg.payload = rand + val;\n}\nelse if(query === \"SetTargetTemperatureRequest\"){\n    msg.payload = val;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 960,
+        "wires": [
+            [
+                "7b8148053e9ea53a",
+                "69a0d8b8f9e114d8"
+            ]
+        ]
+    },
+    {
+        "id": "7b8148053e9ea53a",
+        "type": "ui_gauge",
+        "z": "2b4258b8691c785b",
+        "name": "Temperature UI",
+        "group": "2becf48846abd7b4",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Temperature",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "100",
+        "seg2": "300",
+        "x": 840,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "13401fd862e92088",
+        "type": "function",
+        "z": "2b4258b8691c785b",
+        "name": "Temperature Message Function",
+        "func": "var query = msg.command;\nvar val = msg.payload;\nif(query === \"IncrementTargetTemperatureRequest\"){\n    msg.payload = \"Increasing the temperature by \" + val;\n}\nelse if(query === \"DecrementTargetTemperatureRequest\"){\n    msg.payload = \"Decreasing the temperature by \" + val;\n}\nelse if(query === \"SetTargetTemperatureRequest\"){\n    msg.payload = \"Set the temperature to \" + val;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 740,
+        "wires": [
+            [
+                "69a0d8b8f9e114d8",
+                "8bc6124130496b49"
+            ]
+        ]
+    },
+    {
+        "id": "8bc6124130496b49",
+        "type": "ui_audio",
+        "z": "2b4258b8691c785b",
+        "name": "Audio Message UI",
+        "group": "0f05590416f76e9d",
+        "voice": "Google US English",
+        "always": "",
+        "x": 850,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "d881d577aa0621ba",
+        "type": "function",
+        "z": "2b4258b8691c785b",
+        "name": "Display Message ",
+        "func": "if(msg.payload){\n    msg.payload = \"Turning on the living room light\";\n}\nelse{\n    msg.payload = \"Turning off the living room light\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 220,
+        "wires": [
+            [
+                "48ae7982fcb657d4"
+            ]
+        ]
+    },
+    {
+        "id": "09a4aca796279e57",
+        "type": "alexa-home",
+        "z": "2b4258b8691c785b",
+        "conf": "7282f5910d760e30",
+        "device": "153094",
+        "acknoledge": true,
+        "name": "Temp",
+        "topic": "",
+        "x": 270,
+        "y": 860,
+        "wires": [
+            [
+                "13401fd862e92088",
+                "e305b0d30490fb15"
+            ]
+        ]
+    }
+]
