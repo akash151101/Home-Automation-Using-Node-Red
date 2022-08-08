@@ -99,7 +99,7 @@
         "acknoledge": true,
         "name": "Ceiling Light",
         "topic": "",
-        "x": 350,
+        "x": 290,
         "y": 200,
         "wires": [
             [
