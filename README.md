@@ -2,11 +2,11 @@ Home Automation Using Alexa Node
 =======================
 
 ### Description
-A Simple Home Automation using Node-Red using alexa-home node. This node allows you to hook up Node-RED to react to your Amazon Echo. In order to use this node, you will have to require an account with this service. Once you have an account you can search for the Node-RED skill in the Alexa app and then link the account.
+A Simple Home Automation using Node-Red alexa-home node. This node allows you to hook up Node-RED to react to your Amazon Echo. In order to use this node, you will have to require an account with this service. Once you have an account you can search for the Node-RED skill in the Alexa app and then link the account.
 
 ### How to setup alexa home
 1) https://alexa-node-red.bm.hardill.me.uk/devices, go to the above mention link, where you will be able to see login or register. If you are visiting this site for the first time, click on register and enter your details.
-2) Once you have completed your registration, go to play store and download and search for amazon alexa. Install amazon alexa.
+2) Once you have completed the registration, go to play store, search and download for amazon alexa. Install amazon alexa.
 3) Login with your amazon account, go to browse skills and search for node red. You will be able to view node-RED, click on enable skills it will ask for your username and password. Enter your username and password which you have given in the above link in step 1.
 
 ### How to integrate alexa-home
